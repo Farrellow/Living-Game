@@ -19,13 +19,13 @@ cell_space = {
         }
 
 def show(x, y):
-    sys.stdout.write('\033[' + str(y) + ';' + str(x * 2 - 1) + 'H')
+    sys.stdout.write('\033[' + str(y + 1) + ';' + str(x * 2 + 1) + 'H')
     sys.stdout.write('\033[47m')
     sys.stdout.write('  ')
     sys.stdout.write('\033[0m')
 
 def hide(x, y):
-    sys.stdout.write('\033[' + str(y) + ';' + str(x * 2 - 1) + 'H')
+    sys.stdout.write('\033[' + str(y + 1) + ';' + str(x * 2 + 1) + 'H')
     sys.stdout.write('\033[0m')
     sys.stdout.write('  ')
 

@@ -30,3 +30,7 @@ def initialize():
     cell_space[25][14] = 3
     cell_space[25][15] = 3
     cell_space[25][16] = 3
+    cell_space[25][17] = 3
+
+    cell_space[26][16] = 3
+    cell_space[26][17] = 3

@@ -18,3 +18,15 @@ def initialize():
     cell_space[30][15] = 3
 
     cell_space[31][14] = 3
+    cell_space[31][15] = 3
+    cell_space[31][16] = 3
+    cell_space[31][17] = 3
+
+    cell_space[21][12] = 3
+    cell_space[21][13] = 3
+    cell_space[21][14] = 3
+    cell_space[21][15] = 3
+
+    cell_space[25][14] = 3
+    cell_space[25][15] = 3
+    cell_space[25][16] = 3

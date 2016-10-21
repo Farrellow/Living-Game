@@ -29,6 +29,10 @@ def hide(x, y):
     sys.stdout.write('\033[0m')
     sys.stdout.write('  ')
 
+def _print(x, y, s):
+    sys.stdout.write('\033[' + str(y + 1) + ';' + str(x * 2 + 1) + 'H')
+    sys.stdout.write(s)
+
 def show_display():
     for i in range(x_axis_end):
         for j in range(y_axis_end):

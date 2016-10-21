@@ -5,7 +5,7 @@ import sys
 x_axis_start = 0
 x_axis_end   = 70
 y_axis_start = 0
-y_axis_end   = 40
+y_axis_end   = 39
 
 L = 1
 L_2_D = 2

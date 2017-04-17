@@ -2,11 +2,12 @@
 
 import sys
 
-from init import initialize
+from init import initialize, randan_init
 from logic import next_step, show_display, _print
 
 if __name__ == '__main__':
-    initialize()
+    #initialize()
+    randan_init()
     i = 0
     while True:
         input()

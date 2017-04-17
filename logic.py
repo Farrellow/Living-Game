@@ -3,7 +3,7 @@
 import sys
 
 x_axis_start = 0
-x_axis_end   = 70
+x_axis_end   = 71
 y_axis_start = 0
 y_axis_end   = 39
 

@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 
-from logic import cell_space
+import random
+
+from logic import cell_space, x_axis_end, y_axis_end
+
+def randan_init():
+    for i in range(x_axis_end):
+        for j in range(y_axis_end):
+            if random.randint(1, 3) == 3:
+                cell_space[i][j] = 3
 
 def initialize():
     cell_space[27][13] = 3

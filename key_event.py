@@ -28,6 +28,8 @@ class KeyboardEventListen(object):
 
     def listening(self):
         with open('kbd_fifo', 'wb') as f:
+            f.write(b'b')  # begin
+            f.flush()
             try:
                 while True:
                     events = self.epoll.poll(1)
@@ -46,17 +48,17 @@ class KeyboardEventListen(object):
             b = struct.pack('>B', code)
             f.write(b)
             f.flush()
-            self.last_code = code
+            self.prev_code = code
         else:
             if code == 0:
-                if self.last_code in self.s_set:
-                    b = struct.pack('>B', self.last_code)
+                if self.prev_code in self.s_set:
+                    b = struct.pack('>B', self.prev_code)
                     f.write(b)
                     f.flush()
                 else:
                     pass
             else:
-                self.last_code = code
+                self.prev_code = code
 
 if __name__ == '__main__':
     # 1.init keyboard event listen

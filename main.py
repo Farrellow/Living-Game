@@ -2,44 +2,9 @@
 
 import os
 import random
-import socket
 import struct
-import sys
-import time
 
-from display import Window
-
-def maingg():
-    port = 10000
-    try:
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.bind(('127.0.0.1', port))
-        sock.listen(4)
-        client, address = sock.accept()
-        while True:
-            b = client.recv(1)
-            i = struct.unpack('>B', b)[0]
-            if i == 35:    # h
-                print(i)
-            elif i == 36:  # j
-                print(i)
-            elif i == 37:  # k
-                print(i)
-            elif i == 38:  # l
-                print(i)
-            elif i == 28:  # Enter
-                print(i)
-            elif i == 0:   # continuous
-                print(i)
-            else:          # others
-                pass
-    except KeyboardInterrupt as e:
-        print('KeyboardInterrupt: %s' % e)
-    except Exception as e:
-        print('Exception: %s' % e)
-    finally:
-        client.close()
-        sock.close()
+from display import Window, window_init
 
 def create_fifofile(path):
     try:
@@ -51,12 +16,27 @@ def main_process():
     # 1.display init
     # 2.open fifo file with read mode
     # 3.while True: handler receive to change display
+
     with open('kbd_fifo', 'rb') as f:
+        b = f.read(1)  # begin
+        w = window_init()
+
         while True:
             b = f.read(1)
             if b:
                 code = struct.unpack('>B', b)[0]
-                print('code = %s' % code)
+                if code == 35:    # h
+                    w.move_h()
+                elif code == 36:  # j
+                    w.move_j()
+                elif code == 37:  # k
+                    w.move_k()
+                elif code == 38:  # l
+                    w.move_l()
+                elif code == 28:  # Enter
+                    pass
+                else:             # other impossible
+                    pass
             else:
                 break
 

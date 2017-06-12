@@ -34,7 +34,7 @@ def main_process():
                 elif code == 38:  # l
                     w.move_l()
                 elif code == 28:  # Enter
-                    pass
+                    w.next_step()
                 else:             # other impossible
                     pass
             else:

@@ -122,7 +122,8 @@ class Window(object):
         self.update_center()
 
     def next_step(self):
-        pass
+        self.space.next_step()
+        self.update_center()
 
 def window_init():
     w = Window(1, 1, 32, 64)

@@ -126,12 +126,15 @@ class Window(object):
         self.update_center()
 
 def window_init():
-    w = Window(1, 1, 32, 64)
+    w = Window(1, 1, 35, 68)
     t = []
-    for _ in range(256):
-        x = random.randint(0, 63)
-        y = random.randint(0, 31)
+    for _ in range(128):
+        x = random.randint(0, 31)
+        y = random.randint(0, 15)
         t.append((x, y))
+    print(t)
+    for _ in range(40):
+        print()
     w.load(t)
     w.clean()
     w.init_edge()
@@ -144,21 +147,6 @@ import random
 import time
 
 if __name__ == '__main__':
-    #w = Window(1, 5, 32, 64)
-    #t = []
-    #for _ in range(256):
-    #    x = random.randint(0, 63)
-    #    y = random.randint(0, 31)
-    #    t.append((x, y))
-    #w.load(t)
-    #for _ in range(34):
-    #    print()
-    ##light(0, 0, '  ')
-    ##light(0, 2, '  ')
-    ##default(2, 2, '01')
-    ##default(4, 2, '05')
-    ##w.hide(0, 39)
-
     window = window_init()
     time.sleep(1)
     window.move_h()
@@ -179,14 +167,3 @@ if __name__ == '__main__':
     window.move_k()
     time.sleep(1)
     window.move_j()
-
-    #s = Space()
-    #print(s[9][0])
-    #print(s[0])
-    #s[9][0] = 4
-    #s[3][2] = 56
-    #s[-2][4] = 5
-    #print(s[9][0])
-    #print(s[-2][4])
-    #print(s[3][4])
-    #print(s[3][2])

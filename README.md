@@ -1,6 +1,6 @@
 ﻿# Living-Game
 
-##[Living Game](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+## [Living Game](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
 A Living Game Simulator
 
